@@ -3,7 +3,7 @@
 @cell-height: 70px;
 
 ul.list {
-  padding: 0px;
+  padding: 0;
   border-bottom: 1px solid #ccc;
   li {
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#f0f0f0));
@@ -21,6 +21,12 @@ ul.list {
       white-space: nowrap;
       text-overflow: ellipsis;
       text-decoration: none;
+      span.title {
+        display: block;
+        margin-top: 12px;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
     }
     img {
       float: left;
