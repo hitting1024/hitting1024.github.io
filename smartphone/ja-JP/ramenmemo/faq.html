@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+  .accordion input {
+    display: none;
+  }
+  .accordion label {
+    position: relative;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  .accordion label::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin-top: -7px;
+    border-top: 1px solid #888;
+    border-right: 1px solid #888;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  .accordion div {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,0.1) inset;
+    transition: height .2s ease-in-out;
+  }
+  .accordion input:checked + label::after {
+    margin-top: -3px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .accordion input:checked ~ div {
+    padding: 8px;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+  </style>
+</head>
+<body>
+
+<h1>FAQ</h1>
+<div class="accordion">
+  <input id="data-migration" name="accordion" type="checkbox" />
+  <label for="data-migration">機種変更する際にデータを移行したい</label>
+  <div>
+    <h4>iPhoneからiPhoneに移行する場合</h4>
+    <p>
+      iCloudやiTunesにiPhone自体のバックアップをしていただけましたら、ラーメン手帳のデータもバックアップ・復元できます。
+    </p>
+    <h4>iPhone・Android共通</h4>
+    <p>
+      ラーメン手帳のデータのバックアップは、Dropboxを利用して行います。
+      アカウントをお持ちでない場合は<a href="https://www.dropbox.com/">公式ページ</a>で作成してください。
+    </p>
+    <h5>データの移行手順</h5>
+    <ol>
+      <li>
+        <p>機種変更前の端末で、データのバックアップを行います。</p>
+        <p>
+          データのバックアップは、ラーメンタブの上部メニューの右から2番目のボタンを押すことで実行されます。
+          初回実行時にDropboxのログイン情報を聞かれますのでログインしてください。
+        </p>
+        <p>
+          ※ バックアップに失敗する場合は、下記<a href="#backup-failure">バックアップに失敗してしまう</a>をご確認ください。
+        </p>
+      </li>
+      <li>
+        <p>バックアップされたデータは、Dropboxの下記に保存されます。</p>
+        <ul>
+          <li>iPhone: /アプリ/RamenMemo</li>
+          <li>Android: /アプリ/RamenMemoAndroid</li>
+        </ul>
+        <p>
+          もし、機種変更にてiPhoneからAndroid (または、AndroidからiPhone) に切り替える場合は、
+          Dropboxアプリ等を使用し、バックアップデータを適切な場所に移動してください。
+        </p>
+      </li>
+      <li>
+        <p>
+          機種変更後の端末でデータをインポートします。
+          インポートは、その他タブのインポートから実行できます。
+        </p>
+        <p>
+          インポートを押して遷移した画面に、バックアップしたデータ一覧が表示されますので、
+          対象のデータをすべてインポートします。
+        </p>
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="accordion">
+  <input id="backup-failure" name="accordion" type="checkbox" />
+  <label for="backup-failure">バックアップに失敗してしまう</label>
+  <div>
+    <p>1度にバックアップするデータが多い場合に、バックアップに失敗することがあります。</p>
+    <p>
+      検索機能を使用して日付で絞り込みを行い、1度にバックアップするデータを30件程度にしてください。
+      (画面に表示されているデータがバックアップ対象になります。)
+    </p>
+    <p>
+      また、絵文字や環境依存文字が含まれている場合もバックアップに失敗することがあります。
+      バックアップ対象が通常の文字のみになるように修正した後にバックアップを実行してください。
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
