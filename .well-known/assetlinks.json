@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.monoxer",
+      "sha256_cert_fingerprints": [
+        "ED:97:22:EB:66:D8:18:E8:BB:BD:CB:BB:BB:8E:A4:D6:3F:2D:71:BF:91:E4:01:85:A1:9C:89:97:1F:7E:47:CF"
+      ]
+    }
+  }
+]
